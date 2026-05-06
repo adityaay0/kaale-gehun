@@ -452,14 +452,33 @@
 
         <input type="text" id="location" placeholder="Village / City" required>
 
-        <select id="quantity">
-          <option value="5 KG">5 KG</option>
-          <option value="10 KG">10 KG</option>
-          <option value="25 KG">25 KG</option>
-          <option value="50 KG">50 KG</option>
-          <option value="1 Quintal">1 Quintal</option>
-          <option value="Custom Quantity">Custom Quantity</option>
-        </select>
+       <select id="quantity" onchange="calculatePrice()">
+
+  <option value="5">5 KG</option>
+  <option value="10">10 KG</option>
+  <option value="25">25 KG</option>
+  <option value="50">50 KG</option>
+  <option value="100">1 Quintal</option>
+  <option value="custom">Custom Quantity</option>
+
+</select>
+
+<input 
+type="number" 
+id="customQuantity" 
+placeholder="Enter Custom Quantity in KG"
+style="display:none;"
+oninput="calculatePrice()"
+>
+
+<div id="priceDisplay" style="
+margin-top:10px;
+font-weight:600;
+font-size:18px;
+color:#fff;
+">
+Estimated Price: ₹0
+</div>
 
         <select id="payment">
           <option value="Cash On Delivery">Cash On Delivery</option>
